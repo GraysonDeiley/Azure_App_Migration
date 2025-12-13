@@ -27,7 +27,7 @@ jobs:
           username: ${{ github.actor }}
           password: ${{ secrets.GITHUB_TOKEN }}
 
-      - name: Build and Push the Docker image to GHCR
+      - name: Build and Push the Docker images to GHCR
         run: |
           IMAGE=ghcr.io/${{ github.repository_owner }}/azure-app-migration:latest
           docker build -t $IMAGE .
