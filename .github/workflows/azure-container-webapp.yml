@@ -29,7 +29,8 @@ jobs:
 
       - name: Build and Push the Docker images to GHCR
         run: |
-          IMAGE=ghcr.io/${{ github.repository_owner }}/azure-app-migration:latest
+          OWNER_LOWER=$(echo "${{ github.repository_owner }}" | tr '[:upper:]' '[:lower:]')
+          IMAGE=ghcr.io/$OWNER_LOWER/azure-app-migration:latest
           docker build -t $IMAGE .
           docker push $IMAGE
         env:
