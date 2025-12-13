@@ -45,7 +45,7 @@ jobs:
         run: |
           RG="Certification-RG"
           APP="migration-webapp"
-          IMAGE=ghcr.io/${{ github.repository_owner }}/azure-app-migration:latest
+          IMAGE=ghcr.io/graysondeiley/azure-app-migration:latest
           az webapp config container set --name $APP --resource-group $RG \
             --docker-custom-image-name $IMAGE \
             --docker-registry-server-url https://ghcr.io \
