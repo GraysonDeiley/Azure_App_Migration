@@ -43,7 +43,7 @@ jobs:
 
       - name: Configure App Service to use GHCR private images
         run: |
-          RG="Certification-RG"
+          RG="Certification_RG"
           APP="migration-webapp"
           IMAGE=ghcr.io/graysondeiley/azure-app-migration:latest
           az webapp config container set --name $APP --resource-group $RG \
